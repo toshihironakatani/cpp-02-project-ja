@@ -5,7 +5,8 @@
 #include <iostream>
 
 std::string getUsageMessage() {
-    return {
+    return " ";
+    /*return {
         "\n"
         "使用方法:\n"
         "    elevator <ファイル名> <ミリ秒単位の時間>\n"
@@ -36,7 +37,7 @@ std::string getUsageMessage() {
         "ミリ秒単位の時間:\n"
         "    省略可能です。シミュレーションの各ステップ間の遅延をミリ秒単位で指定します。"
         "\n"
-    };
+    };*/
 }
 
 int main(int argc, char **argv) {

@@ -1,6 +1,20 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <deque>
+
+#include "building.hpp"
+#include "passenger.hpp"
+
+class Building;
+
+struct CallPlan {
+    int time;
+    int id;
+    int pick_up_floor;
+    int drop_off_floor;
+};
 
 class Simulator {
 public:
@@ -17,5 +31,9 @@ private:
     void parseInputs(std::ifstream& file);
 
 private:
+    int time = 0;
     int millisecondsDelay;
+    Building* building;
+    std::vector<Passenger*> passengers;
+    std::deque<CallPlan> call_plans;
 };
