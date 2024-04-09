@@ -128,11 +128,9 @@ void Simulator::run() {
 void Simulator::printResults() const {
     std::cout << "<t=" << time << "> ";
     std::cout << "elevator: " << building->get_elevator_floor(0) << ", ";
-    if(building->get_elevator(0)->get_destinations().size() >= 1) {
-        std::cout << "target: " << building->get_elevator(0)->get_destinations()[0] << ", ";
-    }
-    else {
-        std::cout << "target: none, ";
+    std::cout << " destination: ";
+    for(auto e: building->get_elevator(0)->destinations) {
+        std::cout << e << " ";
     }
 
     std::cout << "passenger: ";
@@ -142,11 +140,6 @@ void Simulator::printResults() const {
     std::cout << ", ";
 
     std::cout << "weight: " << building->get_elevator(0)->get_total_weight() << ", ";
-
-    std::cout << " destination: ";
-    for(auto e: building->get_elevator(0)->destinations) {
-        std::cout << e << " ";
-    }
 
     std::cout << std::endl;
 }
